@@ -1,0 +1,183 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop premium UV reactive wall tapestries for gamers. Neon designs, best sellers, and exclusive collections to level up your space.">
+  <title>Gamer Tapestries - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background-color: #0a0a0a; color: #fff; font-family: 'Orbitron', sans-serif; }
+    .top-bar { display: flex; align-items: center; justify-content: center; background-color: #111; padding: 15px 20px; }
+    .search-bar { flex: 0 0 400px; margin: 0 auto; }
+    .search-bar input { width: 100%; padding: 12px 16px; border-radius: 25px; border: none; background: #111; color: #fff; box-shadow: 0 0 8px #ff2e2e, 0 0 16px #ff2e2e; }
+    .actions { display: flex; gap: 20px; margin-left: 30px; }
+    .actions a { color: #fff; text-decoration: none; font-size: 14px; display: flex; align-items: center; }
+    .actions svg { width: 18px; height: 18px; margin-right: 6px; fill: #fff; }
+    .actions a:hover, .actions a:hover svg { color: #ff2e2e; fill: #ff2e2e; }
+    header { text-align: center; padding: 60px 20px 30px; position: relative; }
+    header::before { content: "WONDYS UV"; position: absolute; top: 235px; left: 50%; transform: translateX(-50%); font-size: 60px; font-weight: bold; color: rgba(255,0,0,0.05); }
+    header h1 { font-size: 48px; color: #ff2e2e; text-shadow: 0 0 10px #ff2e2e; margin: 0; }
+    header h2 { font-size: 24px; color: #f55; margin-top: 10px; }
+    nav { display: flex; justify-content: center; gap: 20px; margin-top: 30px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-size: 16px; }
+    nav a:hover { color: #ff2e2e; }
+    .gallery, #our-story, #testimonials, #newsletter, .trust-badges, .about { width: 100%; max-width: 1200px; margin: auto; padding: 40px 20px; }
+    .gallery { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .gallery h2 { width: 100%; text-align: center; color: #ff2e2e; font-size: 32px; margin-bottom: 20px; }
+    .gallery-item { background-color: #1a1a1a; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 0 15px rgba(255,0,0,0.3); }
+    .gallery-item img { width: 200px; height: 200px; object-fit: cover; border-radius: 10px; }
+    #our-story h2 { color: #ff2e2e; text-align: center; margin-bottom: 20px; }
+    #our-story p { max-width: 800px; margin: auto; line-height: 1.6; }
+    #testimonials h2 { color: #ff2e2e; text-align: center; margin-bottom: 20px; }
+    .testimonial-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .testimonial-item { background: #111; padding: 20px; width: 220px; border-radius: 10px; text-align: center; box-shadow: 0 0 10px rgba(255,0,0,0.2); }
+    .testimonial-photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 10px; }
+    .testimonial-stars { color: #ff2e2e; font-size: 18px; margin-bottom: 10px; }
+    .testimonial-text { font-style: italic; margin-bottom: 10px; }
+    .testimonial-author { font-weight: bold; }
+    #newsletter h2 { color: #ff2e2e; text-align: center; margin-bottom: 20px; }
+    #newsletter form { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    #newsletter input[type="email"] { padding: 10px; border-radius: 20px; border: none; width: 300px; }
+    #newsletter button { padding: 10px 20px; border: none; border-radius: 20px; background: #ff2e2e; color: #fff; }
+    .trust-badges { display: flex; justify-content: center; gap: 30px; align-items: center; }
+    .trust-badges img { width: 80px; }
+    .about { display: flex; flex-wrap: wrap; gap: 40px; color: #eee; background: #111; }
+    .about-text { flex: 1; min-width: 300px; }
+    .about-img { flex: 1; text-align: center; }
+    .about-img img { width: 100%; max-width: 400px; border-radius: 10px; box-shadow: 0 0 20px rgba(255,0,0,0.3); }
+    footer { background-color: #111; color: #777; padding: 3px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    footer .footer-left, footer .footer-center, footer .footer-right { display: flex; gap: 8px; }
+    footer .footer-center { flex-direction: column; align-items: center; gap: 2px; }
+    footer input[type="email"] { padding: 5px; border-radius: 10px; border: none; width: 200px; }
+    footer button { padding: 5px 10px; border: none; border-radius: 10px; background: #ff2e2e; color: #fff; }
+    @media (max-width: 768px) { nav { justify-content: center; } .actions { margin-left: 10px; } #newsletter form { flex-direction: column; } footer { flex-direction: column; gap: 5px; } }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="search-bar"><input type="text" placeholder="Search..."></div>
+    <div class="actions">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>Wishlist</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.3C9.24 14.3 4 15.87 4 18.65V21h16v-2.35c0-2.78-5.24-4.35-8-4.35z"/></svg>Register/Login</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0-2h14v2H7v-2zm10-6h-8V4h8v6zm2-6v8H13V4h6zm-2 8H9v6h4v-6h4zm2 0H7v-6h10v6z"/></svg>Cart</a>
+    </div>
+  </div>
+  <header>
+    <h1>LEVEL UP YOUR SPACE</h1>
+    <h2>Wondys UV Wall Tapestries</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gamer.html">Gamer</a>
+      <a href="aliens.html">Aliens</a>
+      <a href="animals.html">Animals</a>
+      <a href="astronaut.html">Astronaut</a>
+      <a href="dragon.html">Dragon</a>
+      <a href="ladies.html">Ladies</a>
+      <a href="mushrooms.html">Mushrooms</a>
+      <a href="spiritual.html">Spiritual</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+  <section class="gallery">
+    <h2>Best Sellers</h2>
+    <div class="gallery-item"><img src="Images/uvalianmashroom.jpeg" alt="Game Zone"><p>Game Zone</p></div>
+    <div class="gallery-item"><img src="Images/uvcat.jpeg" alt="Gamer Face"><p>Pro Gamer</p></div>
+    <div class="gallery-item"><img src="Images/uvalians.jpeg" alt="Meme Tapestry"><p>Eat Sleep Game</p></div>
+    <div class="gallery-item"><img src="Images/uvfrog.jpeg" alt="Gamer Face"><p>Pro Gamer</p></div>
+    <div class="gallery-item"><img src="Images/uvmashrooms.jpeg" alt="Gamer Face"><p>Pro Gamer</p></div>
+    <div class="gallery-item"><img src="Images/uvmoon.jpeg" alt="Gamer Face"><p>Pro Gamer</p></div>
+  </section>
+  <!-- Our Story -->
+  <section id="our-story">
+    <h2>Our Story</h2>
+    <p>Founded by gaming enthusiasts in Dubai, Wondys UV was born from a passion to merge art and immersion. Frustrated with ordinary decor, our founders experimented with neon pigments and phosphorescent inks. Today, we create premium UV-reactive tapestries that transform any wall into a vibrant gaming backdrop. From our first blacklight collection to now shipping worldwide, our mission remains the same: level up your space with art that glows.</p>
+  </section>
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-list">
+      <div class="testimonial-item"><img src="Images/user1.jpg" class="testimonial-photo" alt="User 1"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Absolutely phenomenal quality and glow!"</div><div class="testimonial-author">— Alex T.</div></div>
+      <div class="testimonial-item"><img src="Images/user2.jpg" class="testimonial-photo" alt="User 2"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"My gaming room has never looked better."</div><div class="testimonial-author">— Jamie L.</div></div>
+      <div class="testimonial-item"><img src="Images/user3.jpg" class="testimonial-photo" alt="User 3"><div class="testimonial-stars">★★★★☆</div><div class="testimonial-text">"Great tapestries but delivery took a bit long."</div><div class="testimonial-author">— Morgan K.</div></div>
+      <div class="testimonial-item"><img src="Images/user4.jpg" class="testimonial-photo" alt="User 4"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Stunning neon effect under blacklight."</div><div class="testimonial-author">— Riley P.</div></div>
+      <div class="testimonial-item"><img src="Images/user5.jpg" class="testimonial-photo" alt="User 5"><div class="testimonial-stars">★★★★★</div><div class="testimonial-text">"Highly recommend to all gamers!"</div><div class="testimonial-author">— Casey Z.</div></div>
+    </div>
+  </section>
+  <!-- Newsletter -->
+  <section id="newsletter">
+    <h2>Join Our Community</h2>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+  <!-- Trust Badges -->
+  <div class="trust-badges">
+    <img src="Images/stripe.png" alt="Powered by Stripe">
+    <img src="Images/ssl.png" alt="Secure SSL">
+    <img src="Images/guarantee.png" alt="30-day Money Back Guarantee">
+  </div>
+  <!-- About Us -->
+  <section class="about">
+    <div class="about-text">
+      <h3>About Us</h3>
+      <p>We bring your gaming space to life with premium UV reactive tapestries. Designed for immersion, made for gamers. Turn any wall into a statement.</p>
+    </div>
+    <div class="about-img"><img src="https://via.placeholder.com/400x300/ff2e2e/000000?text=Setup" alt="Setup"></div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <a href="terms.html">Terms & Conditions</a>
+      <a href="policy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-center">
+      <span>&copy; 2020-2025</span>
+      <span>123 Gaming St, Dubai, UAE</span>
+    </div>
+    <div class="footer-right">
+      <input type="email" placeholder="Your email for updates">
+      <button>Subscribe</button>
+    </div>
+  </footer>
+  <!-- Chatbot Widget -->
+  <div id="chatbot" style="position:fixed;bottom:20px;right:20px;">
+    <button id="chat-open" style="background:#ff2e2e;color:#fff;padding:10px 15px;border:none;border-radius:50%;font-size:18px;">💬</button>
+    <div id="chat-window" style="display:none;width:300px;height:400px;background:#111;border:2px solid #ff2e2e;border-radius:10px;overflow:hidden;">
+      <div id="chat-header" style="background:#ff2e2e;padding:10px;color:#fff;text-align:center;">Chat with us</div>
+      <div id="user-form" style="padding:10px;">
+        <input type="text" id="u-first" placeholder="First Name" style="width:100%;margin-bottom:5px;padding:5px;" />
+        <input type="text" id="u-last" placeholder="Last Name" style="width:100%;margin-bottom:5px;padding:5px;" />
+        <input type="email" id="u-email" placeholder="Email" style="width:100%;margin-bottom:5px;padding:5px;" />
+        <input type="tel" id="u-phone" placeholder="Phone" style="width:100%;margin-bottom:10px;padding:5px;" />
+        <button id="start-chat" style="width:100%;padding:8px;background:#ff2e2e;color:#fff;border:none;">Start Chat</button>
+      </div>
+      <div id="chat-body" style="display:none;padding:10px;flex-direction:column;height:calc(100% - 40px);">
+        <div id="messages" style="flex:1;overflow-y:auto;margin-bottom:10px;"></div>
+        <input id="msg-input" type="text" placeholder="Type a message..." style="width:100%;padding:5px;" />
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('chat-open').onclick = () => document.getElementById('chat-window').style.display = 'block';
+    document.getElementById('start-chat').onclick = () => {
+      document.getElementById('user-form').style.display = 'none';
+      document.getElementById('chat-body').style.display = 'flex';
+      const welcome = document.createElement('div');
+      welcome.textContent = 'Hello ' + document.getElementById('u-first').value + '! How can I assist you?';
+      document.getElementById('messages').appendChild(welcome);
+    };
+    document.getElementById('msg-input').addEventListener('keypress', e => {
+      if(e.key==='Enter' && e.target.value.trim()){
+        const msg = document.createElement('div'); msg.textContent = e.target.value;
+        document.getElementById('messages').appendChild(msg);
+        e.target.value='';
+      }
+    });
+  </script>
+</body>
+</html>
