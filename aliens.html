@@ -241,5 +241,27 @@
       }, 2000);
     }
   </script>
+
+<script>
+    // Correction des liens pour GitHub Pages
+    document.querySelectorAll('nav a').forEach(link => {
+      const href = link.getAttribute('href');
+      
+      // Si on est sur GitHub Pages
+      if(window.location.host.includes('github.io')) {
+        // Gérer la page d'accueil
+        if(href === '/') link.href = window.location.pathname.includes('WondysUV') 
+          ? '/WondysUV/' 
+          : '/';
+        
+        // Gérer les autres pages
+        else if(!href.startsWith('http')) {
+          link.href = window.location.pathname.includes('WondysUV') 
+            ? `/WondysUV/${href}`
+            : `/${href}`;
+        }
+      }
+    });
+    </script>
 </body>
 </html>
